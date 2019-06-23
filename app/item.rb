@@ -18,7 +18,8 @@ class Item
       if @@items.find{|s| s.name == item_name}
       resp.write @@items.find{|s| s.name == item_name}.price
     else 
-      
+      resp.write "Route not found"
+      resp.status = 404
     end
     resp.finish
   end
