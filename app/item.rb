@@ -15,8 +15,10 @@ class Item
  
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last #turn /items/fruit into fruit
-      item = @@items.find{|s| s.name == item_name}
-      resp.write item.price
+      if @@items.find{|s| s.name == item_name}
+      resp.write @@items.find{|s| s.name == item_name}.price
+    else 
+      
     end
     resp.finish
   end
