@@ -10,9 +10,10 @@
         item = @@items.find{|s| s.name == item_name}
         resp.write item.price
       else 
-        resp.write "Route not found"
         resp.status = 400
       end
+    else 
+      
     end
     resp.finish
   end
