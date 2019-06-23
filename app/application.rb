@@ -11,7 +11,7 @@
         resp.write item.price
       else 
         resp.write "Route not found"
-        resp.status = 404
+        resp.status = 400
       end
     end
     resp.finish
